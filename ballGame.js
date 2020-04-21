@@ -1,5 +1,4 @@
     var canvas = document.getElementById("canvas");
-    console.log(canvas);
     var ctx = canvas.getContext("2d");
     var x = canvas.width/2;
     var y = canvas.height-30;
@@ -28,8 +27,9 @@
         }
     }
     document.addEventListener("keydown", KeyDownHandler, false);
-    document.addEventListener("keyup",KeyUpHandler, false);
+    document.addEventListener("keyup", KeyUpHandler, false);
     document.addEventListener("mousemove",mouseMoveHandler, false);
+
     //movement with the keyboard function
     function KeyDownHandler(e) {
         if(e.keyCode === 39) {
@@ -64,7 +64,7 @@
                         b.status = 0;
                         score++;
                         if(score === rbriks*cbriks) {
-                            alert("You win!!" + congratulations);
+                            alert("You win!! Congratulations");
                             document.location.reload();
                         }
                     }
@@ -75,12 +75,12 @@
     //this function calculates the score
     function upscore() {
         ctx.font = "20px Arial";
-        ctx.fillStyle = "red";
+        ctx.fillStyle = "blue";
         ctx.fillText("Score:" + score, 8, 20);
     }
     function uplives() {
         ctx.font = "20px Arial";
-        ctx.fillStyle = "red";
+        ctx.fillStyle = "yellow";
         ctx.fillText("Lives:" + lives, canvas.width-65, 20);
     }
 
@@ -111,8 +111,8 @@
                     briks[c][r].x = brikX ;
                     briks[c][r].y = brikY ;
                     ctx.beginPath();
+                    ctx.fillStyle = randomcolor();
                     ctx.rect(brikX,brikY,brikw,brikh);
-                    ctx.fillstyle = randomcolor();
                     ctx.fill();
                     ctx.closePath();
                 }
@@ -171,8 +171,9 @@
         requestAnimationFrame(ballgame);
     }
     ballgame();
-    //setting the color of the briks to a random chosen color
 
+    //setting the color of the briks to a random chosen color
+    //Not working 
     function randomcolor(){
         var sign = "0123456789ABCDEF";
         var component = "#";
