@@ -178,7 +178,7 @@
         var sign = "0123456789ABCDEF";
         var component = "#";
         var i;
-        for ( i=0; i<6; i++)  {
+        for (var i=0; i<6 ; i++) {
             component += sign[Math.floor(Math.random()*15)];
         }
         return component;
