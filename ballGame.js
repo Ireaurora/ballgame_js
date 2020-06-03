@@ -111,7 +111,7 @@
                     briks[c][r].x = brikX ;
                     briks[c][r].y = brikY ;
                     ctx.beginPath();
-                    ctx.fillStyle = randomcolor();
+                    ctx.fillStyle = "white";
                     ctx.rect(brikX,brikY,brikw,brikh);
                     ctx.fill();
                     ctx.closePath();
